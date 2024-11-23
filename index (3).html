@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XADARSHX MOD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Glassmorphism styling */
+        .container {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            margin-bottom: 20px;
+        }
+
+        select, input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        select, input {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        button {
+            background: linear-gradient(90deg, #00ff00, #0077ff);
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.7);
+        }
+
+        .telegram-link {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            background: linear-gradient(90deg, #0088cc, #0055cc);
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .telegram-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.7);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="container" id="loginPage">
+        <h1>XADARSHX MOD</h1>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="login()">LOGIN</button>
+    </div>
+
+    <!-- Game Page -->
+    <div class="container" id="gamePage" style="display: none;">
+        <h1>XADARSHX MOD</h1>
+        
+        <!-- Game Selector -->
+        <select id="gameSelector">
+            <option value="51 Game">51 Game</option>
+            <option value="91 Club">91 Club</option>
+            <option value="BDG Win">BDG Win</option>
+            <option value="NN Game">NN Game</option>
+            <option value="Big Kolkata">Big Kolkata</option>
+            <option value="Goa Game">Goa Game</option>
+            <option value="OK Win">OK Win</option>
+            <option value="Tiranga">Tiranga</option>
+            <option value="Sikkim">Sikkim</option>
+        </select>
+
+        <!-- User Input -->
+        <input type="text" id="userInput" placeholder="Enter Period ">
+        
+        <!-- Predict Button -->
+        <button onclick="predict()">RESULT</button>
+        
+        <!-- Prediction Result -->
+        <div id="result"></div>
+        
+        <!-- Telegram Link -->
+        <a href="https://t.me/xadarshxmod" class="telegram-link" target="_blank">Join Telegram Channel</a>
+    </div>
+
+    <script>
+        // Login functionality
+        function login() {
+            const password = document.getElementById('password').value;
+
+            if (password === 'XADARSHX') {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('gamePage').style.display = 'block';
+            } else {
+                alert('Invalid Password. Please try again.');
+            }
+        }
+
+        // Prediction functionality
+        function predict() {
+            const selectedGame = document.getElementById('gameSelector').value;
+            const userInput = document.getElementById('userInput').value;
+
+            if (!userInput) {
+                alert('Please enter your text!');
+                return;
+            }
+
+            const prediction = Math.random() > 0.5 ? 'BIG ' : 'SMALL ';
+            const resultDiv = document.getElementById('result');
+
+            resultDiv.textContent = `Game: ${selectedGame} | RESULT "${userInput}": ${prediction}`;
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
